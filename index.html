@@ -90,7 +90,7 @@
 						</p>
 						<ul>
 							<li class="small">No inline css, behavior filter and -moz-binding proprieties, no <red>!important</red> tag</li>
-							<li class="small">built in <b>amp.css</b>given</li>
+							<li class="small">built in <b>amp.css</b></li>
 							<li class="small">In the head section <pre><code>&lt;style amp-custom&gt;</code></pre></li>
 							<li class="small">do not touch the "-amp-" elements even with pseudoselectors</li>
 							<li>Take care of limited use of <a alt="limited css" href="https://www.ampproject.org/docs/guides/author-develop/responsive/style_pages#restricted-styles">transitions and keyframes</a></li>
@@ -125,10 +125,23 @@
 				</section>
 				<section>
 					<section>
-					<p>Header general section</p>
+					<p>Header general hooks and locations</p>
+						<pre><code>
+<?php
+add_action('wp_head', 'your_function');
+?>
+						</code></pre>
+						<pre><code>
+header.php
+						</code></pre>
 					</section>
 					<section>
 					<p>Different headers for different elements</p>
+					<pre><code>
+					get_header('custom');
+					</code></pre>
+						<p>on attachments(based on mime), post types, archives, category and pages templates</p>
+						<p>On single images, audio and video hooks</p>
 					</section>
 				</section>
 				<section>
