@@ -32,6 +32,9 @@
 				width:100%;
 				height:1em;
 			}
+			code {
+				white-space: pre-wrap;
+			}
 		</style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -84,19 +87,40 @@
 					<section>
 						<h5>CSS</h5>
 						<p><a class="small" alt="supported css" href="https://www.ampproject.org/docs/guides/author-develop/responsive/style_pages">Supported code</a>:
-						</p><ul>
+						</p>
+						<ul>
 							<li class="small">No inline css, behavior filter and -moz-binding proprieties, no <red>!important</red> tag</li>
 							<li class="small">built in <b>amp.css</b>given</li>
 							<li class="small">In the head section <pre><code>&lt;style amp-custom&gt;</code></pre></li>
 							<li class="small">do not touch the "-amp-" elements even with pseudoselectors</li>
+							<li>Take care of limited use of <a alt="limited css" href="https://www.ampproject.org/docs/guides/author-develop/responsive/style_pages#restricted-styles">transitions and keyframes</a></li>
 						</ul>
 					</section>
 					<section>
 						<h3>Web validator</h3>
-						<p><a alt="ampproject validator" href="https://validator.ampproject.org/">Web</a> and chrome extension valodators</p>
+						<p><a alt="ampproject validator" href="https://validator.ampproject.org/">Web</a> and chrome console validators</p>
 					</section>
 				</section>
 				<section>
+					<h2>A step on Wordpress</h2>
+					<p class="half">AMPProject Elements (html prototype)</p>
+					<p class="half">PHP components</p>
+				</section>
+				<section>
+					<b>Sample</b>
+					<pre>
+						<code>
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'header-menu' => __( 'Header Menu' ),
+      'extra-menu' => __( 'Extra Menu' )
+     )
+   );
+ }
+ add_action( 'init', 'register_my_menus' );
+						</code>
+					</pre>
 				</section>
 				
 			</div>
