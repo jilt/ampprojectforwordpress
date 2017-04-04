@@ -143,11 +143,25 @@ function hook_amp_elements() {
     &lt;?php
 }
 add_action('wp_head', 'hook_amp_elements');</code></pre>
-						<p>We are gonna hook_amp_elements to add elements used in every php template of your theme</p>
+						<p>We are using hook_amp_elements to add elements used in every php template of your theme</p>
 					</section>
 					<section>
 						<p class="small">Then in your php template (header.php or page.php)</p>
-						<pre><code>wp_nav_menu( array( 'theme_location' =&gt; 'header-menu', 'container_class' => 'my_amp_menu_class' ) );</code></pre>
+						<pre><code style="font-size:16px;">wp_nav_menu( array( 'theme_location' =&gt; 'header-menu', 'items_wrap'=&gt; '' ) );</code></pre>
+					</section>
+					<section>
+						<p class="small">In "<a alt="codex docu" href="https://developer.wordpress.org/reference/functions/wp_nav_menu/#Using_a_Custom_Walker_Function" target="blank">item_wrap</a>" we need to add these lines of code</p>
+						<pre><code style="font-size:16px;">&lt;amp-sidebar id="sidebar" layout="nodisplay"
+  side="right" &gt;
+  &lt;amp-img class="amp-close-image"
+    src="/img/ic_close_black_18dp_2x.png"
+    width="20"
+    height="20"
+    alt="close sidebar"
+    on="tap:sidebar.close"
+    role="button"
+    tabindex="0"&gt;&lt;/amp-img&gt;&lt;ul id="%1$s" class="%2$s"&gt;%3$s&lt;/ul&gt;&lt;/amp-sidebar&gt;</code></pre>
+						<p class="small">No need to use the walker</p>
 					</section>
 				</section>
 				<section>
