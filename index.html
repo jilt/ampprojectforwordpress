@@ -131,18 +131,19 @@
 						<img style="width:500px;" src="http://www.jeeltcraft.com/sappiamo/mpp/componentstotemplates.jpg" alt="flux diagram" />
 					</section>
 					<section>
-						<p>Sample menu with <a alt="amp-sidebar component" target="_blank" href="https://ampbyexample.com/components/amp-sidebar/">amp-sidebar</a></p>
+						<p class="small">Sample <a alt="wp codex for menu" target="_blank" href="https://codex.wordpress.org/Navigation_Menus">menu</a> with <a alt="amp-sidebar component" target="_blank" href="https://ampbyexample.com/components/amp-sidebar/">amp-sidebar</a></p>
+						<p class="small">First step in function.php</p>
 						<pre>
-							<code>
-PHP registering code
-							</code>
+							<code style="font-size:16px;">function register_amp_menu() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'init', 'register_amp_menu' );</code>
 						</pre>
 					</section>
 					<section>
-							<pre>
-							<code>
-PHP developing code and action hook
-							</code>
+						<p class="small">Then in your php template (header.php or page.php)</p>
+						<pre>
+							<code>php wp_nav_menu( array( 'theme_location' =&gt; 'header-menu' ) );</code>
 						</pre>
 					</section>
 				</section>
