@@ -115,7 +115,7 @@ add_action('wp_head', 'hook_css');</code></pre>
 					<section>
 						<h4>Links to fonts</h4>
 						<ul>
-							<li class="small">Using the "link" tag in the head of the page (only <a alt="whitelist fonts" href="https://www.ampproject.org/docs/guides/author-develop/responsive/custom_fonts">whitelisted origins</a>):<pre><code style="font-size:16px;">&lt;link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet"&gt;
+							<li class="small">Using the "link" tag in the head of the page (only <a alt="whitelist fonts" href="https://www.ampproject.org/docs/guides/author-develop/responsive/custom_fonts">whitelisted origins</a>):<pre><code style="font-size:18px;">&lt;link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet"&gt;
 &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</code></pre>
 							</li>
 							<li class="small">Via @font-face</li>
@@ -127,7 +127,13 @@ add_action('wp_head', 'hook_css');</code></pre>
 					</section>
 					<section>
 						<p>add external resources via 'amp-iframe'</p>
-						<pre><code style="font-size=16px;">&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"&gt;&lt;/script&gt;</code></pre>
+						<pre><code style="font-size:16px;">&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"&gt;&lt;/script&gt;</code></pre>
+						<pre><code style="font-size:16px;">&lt;amp-iframe width=300 height=300
+    sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+    layout="responsive"
+    frameborder="0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=Alameda,%20CA"&gt;
+&lt;/amp-iframe&gt;</code></pre>
 					</section>
 					<section>
 						<h4>Web validator</h4>
