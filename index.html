@@ -161,9 +161,8 @@ add_action('wp_head', 'hook_amp_elements');</code></pre>
 				<section>
 					<section>
 					<p>Header general hook</p>
-						<p class="small">in function.php</p><pre><code style="font-size:16px;"><?php
-add_action('wp_head', 'your_function');
-?></code></pre>
+						<p class="small">in function.php</p><pre><code style="font-size:16px;">
+add_action('wp_head', 'your_function');</code></pre>
 						<p class="small">called template</p>
 						<pre><code style="font-size:16px;">header.php</code></pre>
 						<p class="small">call (index.php or single.php)</p>
@@ -172,8 +171,8 @@ add_action('wp_head', 'your_function');
 					<section>
 						<p>Different headers for different elements</p>
 						<pre><code style="font-size:16px;">get_header('custom');</code></pre>
-						<p class="small">so</p>
-						<pre><code style="font-size:16px;"><?php if (is_category()) {
+						<p class="small">so...</p>
+						<pre><code style="font-size:16px;">if (is_category()) {
 get_header('categories');
 } elseif(is_single()) {
 get_header('single');
@@ -185,7 +184,17 @@ get_header('archive');
 get_header('pages');
 } else {
 get_header();
-}?></code></pre>
+}</code></pre>
+					</section>
+					<section>
+						<p class="small">will work on these templates on the <a alt="codex template folders" href="http://wordpress.stackexchange.com/questions/120887/custom-templates-folder" >theme's root folder</p>
+						<ul class="small">
+							<li>header-categories.php</li>
+							<li>header-single.php</li>
+							<li>header-front_page.php</li>
+							<li>header-archive.php</li>
+							<li>header-pages.php</li>
+						</ul>
 					</section>
 				</section>
 				<section>
