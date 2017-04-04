@@ -153,36 +153,39 @@ add_action('wp_head', 'hook_amp_elements');</code></pre>
 						<p class="small">In "<a alt="codex docu" href="https://developer.wordpress.org/reference/functions/wp_nav_menu/#Using_a_Custom_Walker_Function" target="blank">item_wrap</a>" we need to add these lines of code</p>
 						<pre><code style="font-size:16px;">&lt;button on="tap:sidebar.toggle"
   class="yourbutton-class"&gt;Toggle sidebar&lt;/button&gt;
-  &lt;amp-sidebar id="sidebar" layout="nodisplay"
-  side="right" &gt;
-  &lt;amp-img class="amp-close-image"
-    src="/img/ic_close_black_18dp_2x.png"
-    width="20"
-    height="20"
-    alt="close sidebar"
-    on="tap:sidebar.close"
-    role="button"
-    tabindex="0"&gt;&lt;/amp-img&gt;&lt;ul id="%1$s" class="%2$s"&gt;%3$s&lt;/ul&gt;&lt;/amp-sidebar&gt;</code></pre>
+&lt;amp-sidebar id="sidebar" layout="nodisplay" side="right" &gt;
+  &lt;amp-img class="amp-close-image" src="/img/ic_close_black_18dp_2x.png" width="20" height="20" alt="close sidebar" on="tap:sidebar.close" role="button" tabindex="0"&gt;&lt;/amp-img&gt;&lt;ul id="%1$s" class="%2$s"&gt;%3$s&lt;/ul&gt;&lt;/amp-sidebar&gt;</code></pre>
 						<p class="small">No need to use a <a alt="tutplus resources on walkers" target="_blank" href="https://code.tutsplus.com/tutorials/understanding-the-walker-class--wp-25401">walker</a>, neither any <a alt="alternative code" target="_blank" href="https://digwp.com/2011/11/html-formatting-custom-menus/">custom solutions</a></p>
 					</section>
 				</section>
 				<section>
 					<section>
-					<p>Header general hooks and locations</p>
-						<pre><code>
-<?php
+					<p>Header general hook</p>
+						<p class="small">in function.php</p><pre><code style="font-size:16px;"><?php
 add_action('wp_head', 'your_function');
-?>
-						</code></pre>
-						<pre><code>
-header.php
-						</code></pre>
+?></code></pre>
+						<p class="small">called template</p>
+						<pre><code style="font-size:16px;">header.php</code></pre>
+						<p class="small">call (index.php or single.php)</p>
+<pre><code><? php get_header(); ?></code></pre>
 					</section>
 					<section>
 						<p>Different headers for different elements</p>
-						<pre><code>
-get_header('custom');
-						</code></pre>
+						<pre><code style="font-size:16px;">get_header('custom');</code></pre>
+						<p class="small">so</p>
+						<pre><code style="font-size:16px;"><?php if (is_category()) {
+get_header('categories');
+} elseif(is_single()) {
+get_header('single');
+} elseif(is_front_page()) {
+get_header('front_page');
+} elseif(is_archive()) {
+get_header('archive');
+} elseif (is_page()) {
+get_header('pages');
+} else {
+get_header();
+}?></code></pre>
 					</section>
 				</section>
 				<section>
