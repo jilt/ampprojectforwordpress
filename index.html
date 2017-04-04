@@ -151,7 +151,9 @@ add_action('wp_head', 'hook_amp_elements');</code></pre>
 					</section>
 					<section>
 						<p class="small">In "<a alt="codex docu" href="https://developer.wordpress.org/reference/functions/wp_nav_menu/#Using_a_Custom_Walker_Function" target="blank">item_wrap</a>" we need to add these lines of code</p>
-						<pre><code style="font-size:16px;">&lt;amp-sidebar id="sidebar" layout="nodisplay"
+						<pre><code style="font-size:16px;">&lt;button on="tap:sidebar.toggle"
+  class="yourbutton-class"&gt;Toggle sidebar&lt;/button&gt;
+						&lt;amp-sidebar id="sidebar" layout="nodisplay"
   side="right" &gt;
   &lt;amp-img class="amp-close-image"
     src="/img/ic_close_black_18dp_2x.png"
