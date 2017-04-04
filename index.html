@@ -153,7 +153,7 @@ add_action('wp_head', 'hook_amp_elements');</code></pre>
 						<p class="small">In "<a alt="codex docu" href="https://developer.wordpress.org/reference/functions/wp_nav_menu/#Using_a_Custom_Walker_Function" target="blank">item_wrap</a>" we need to add these lines of code</p>
 						<pre><code style="font-size:16px;">&lt;button on="tap:sidebar.toggle"
   class="yourbutton-class"&gt;Toggle sidebar&lt;/button&gt;
-						&lt;amp-sidebar id="sidebar" layout="nodisplay"
+  &lt;amp-sidebar id="sidebar" layout="nodisplay"
   side="right" &gt;
   &lt;amp-img class="amp-close-image"
     src="/img/ic_close_black_18dp_2x.png"
@@ -163,7 +163,7 @@ add_action('wp_head', 'hook_amp_elements');</code></pre>
     on="tap:sidebar.close"
     role="button"
     tabindex="0"&gt;&lt;/amp-img&gt;&lt;ul id="%1$s" class="%2$s"&gt;%3$s&lt;/ul&gt;&lt;/amp-sidebar&gt;</code></pre>
-						<p class="small">No need to use the walker</p>
+						<p class="small">No need to use a walker, neither any <a alt="alternative code" target="_blank" href="https://digwp.com/2011/11/html-formatting-custom-menus/">custom solutions</a></p>
 					</section>
 				</section>
 				<section>
