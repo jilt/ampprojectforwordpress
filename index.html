@@ -122,22 +122,12 @@ add_action('wp_head', 'hook_css');</code></pre>
 						</ul>
 					</section>
 					<section>
-						<h5>JAVASCRIPT</h5>
-						<p>no jquery resources</p>
-						<ul>
-							<li class="small"><a class="small" alt="no jquery javascript" target="_blank" href="http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/">Replace the main jquery features</a></li>
-							<li class="small"><a class="small" alt="no jquery javascript" target="_blank" href="http://youmightnotneedjquery.com/">Why you don't need jquery</a></li>
-							<li class="small"><a class="small" alt="parallax no jquery" target="_blank" href="http://prinzhorn.github.io/skrollr/">Skrollr: Parallax effect by plain javascript</a></li>
-							<li class="small"><a class="small" alt="advanced javascript tips" target="_blank" href="http://www.jstips.co/">Advanced plain javascript tips</a></li>
-							<li class="small"><a class="small" alt="js1k" target="_blank" href="http://js1k.com/">light javascript code competition winners JS1K</a></li>
-						</ul>
+						<h3>JAVASCRIPT</h3>
+						<p>Actions and Events in AMP</p>
 					</section>
 					<section>
-						<p>add javascript code in the footer hook</p>
-						<pre><code style="font-size=16px;">function your_javascript() {
-    echo '<script type="text/javascript">Your javascript function</script>';
-}
-add_action( 'wp_footer', 'your_javascript' );</code></pre>
+						<p>add external resources via 'amp-iframe'</p>
+						<pre><code style="font-size=16px;">&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"&gt;&lt;/script&gt;</code></pre>
 					</section>
 					<section>
 						<h4>Web validator</h4>
