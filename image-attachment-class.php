@@ -29,17 +29,17 @@ function amp_img_html_template($html, $id, $caption, $title, $align, $url, $size
 	}
 	$out .= '<amp-img src="'. $image_thumb[0] .'" alt="'.$alt.'" '.$hwstring.' '.$img_srcset[0].' layout="responsive"></amp-img>';
 	if($url){
-		$out .= '</a>';
+		$out .= '</a>\n';
 	}
-	$out .= '</div><amp-lightbox id="img-lightbox"
-  layout="nodisplay">
-  <div class="lightbox"
-    on="tap:img-lightbox.close"
-    role="button"
-    tabindex="0">
-    <amp-img src="'. $image_thumb[0] .'" alt="'.$alt.'" '.$hwstring.' '.$img_srcset[0].' layout="responsive"></amp-img>
-  </div>
-</amp-lightbox>';
+	$out .= '</div><amp-lightbox id="img-lightbox"\n';
+	$out .= 'layout="nodisplay">\n';
+  	$out .='<div class="lightbox"\n';
+	$out .='on="tap:img-lightbox.close"\n';
+	$out .='role="button"\n';
+	$out .='tabindex="0">\n';
+	$out .='<amp-img src="'. $image_thumb[0] .'" alt="'.$alt.'" '.$hwstring.' '.$img_srcset[0].' layout="responsive"></amp-img>\n';
+	$out .='</div>\n';
+	$out .='</amp-lightbox>\n';
 	return $out; // the result HTML
 }
  
