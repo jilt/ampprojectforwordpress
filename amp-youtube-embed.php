@@ -8,3 +8,14 @@ function amp_youtube_oembed( $code ){
         $code = str_replace( '</iframe>', '</amp-youtube>', $code);
     return $code;
 }
+//oembed_result alternative
+//function my_plugin_enable_js_api( $html, $url, $args ) {
+ 
+	/* Modify video parameters. */
+//	if ( strstr( $html,'youtube.com/embed/' ) ) {
+//		$html = str_replace( '?feature=oembed', '?feature=oembed&enablejsapi=1', $html );
+//	}
+	
+//    return $html;
+//}
+//add_filter( 'oembed_result', 'my_plugin_enable_js_api', 10, 3 );
