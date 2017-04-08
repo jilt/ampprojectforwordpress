@@ -1,3 +1,5 @@
+/* remember to add <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script> */
+
 add_filter('post_gallery', 'amp_carousel_gallery', 10, 2); // post gallery hook
 function amp_carousel_gallery($output, $attr) {
     global $post;
