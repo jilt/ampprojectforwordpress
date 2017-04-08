@@ -1,4 +1,4 @@
-add_filter('post_gallery', 'amp_carousel_gallery', 10, 2);
+add_filter('post_gallery', 'amp_carousel_gallery', 10, 2); // post gallery hook
 function amp_carousel_gallery($output, $attr) {
     global $post;
 
