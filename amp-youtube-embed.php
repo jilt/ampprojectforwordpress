@@ -9,13 +9,13 @@ function amp_youtube_oembed( $code ){
     return $code;
 }
 //oembed_result alternative
-//function my_plugin_enable_js_api( $html, $url, $args ) {
+//function amp_youtube_oembed( $html, $url, $args ) {
  
 	/* Modify video parameters. */
 //	if ( strstr( $html,'youtube.com/embed/' ) ) {
-//		$html = str_replace( '?feature=oembed', '?feature=oembed&enablejsapi=1', $html );
+//		$html = str_replace( 'xxx', 'yyy', $html );
 //	}
 	
 //    return $html;
 //}
-//add_filter( 'oembed_result', 'my_plugin_enable_js_api', 10, 3 );
+//add_filter( 'oembed_result', 'amp_youtube_oembed', 10, 3 );
