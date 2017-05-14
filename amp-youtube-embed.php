@@ -1,11 +1,7 @@
-add_filter( 'embed_oembed_html', 'amp_youtube_oembed' );
-function amp_youtube_oembed( $code ){
-    if(strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false):
-        $url = urldecode(rawurldecode( $code ));
-            preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $matches, PREG_OFFSET_CAPTURE);
-            $amp_y_id = echo $matches[1];
-        $code = str_replace( '<iframe', '<amp-youtube layout="fixed height" data-videoid="'. $amp_y_id .'"', $code );
-        $code = str_replace( '</iframe>', '</amp-youtube>', $code);
-    return $code;
-    endif;
+add_filter( 'embed_oembed_html', 'besyar_embed_oembed_html', 99, 4 );
+function besyar_embed_oembed_html( $cache, $url, $attr, $post_ID ) {
+	if ( false !== strpos( $url, 'youtube.com' ) || false !== strpos( $url, 'youtu.be' ) ) {
+		    preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $matches);
+	return '<amp-youtube layout="responsive" width="480" height="270" data-videoid="' . esc_attr( $matches[1] ) . '"></amp-youtube>';
+	}
 }
